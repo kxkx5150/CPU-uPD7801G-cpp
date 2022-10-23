@@ -32,12 +32,18 @@ EMU::~EMU()
     if (vm)
         delete vm;
 }
-void EMU::run(uint64_t cycles)
+
+void EMU::run_cpu(uint64_t cycles)
+{
+    for (int i = 0; i < cycles; i++) {
+        vm->run();
+    }
+}
+void EMU::run()
 {
     update_input();
-    update_sound();
-    update_timer();
-    vm->run();
+    // update_sound();
+    // update_timer();
 }
 void EMU::reset()
 {

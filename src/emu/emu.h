@@ -1,6 +1,7 @@
 
 #ifndef _EMU_H_
 #define _EMU_H_
+#include <SDL2/SDL_keycode.h>
 #include <SDL2/SDL_render.h>
 #define DIRECTSOUND_VERSION 0x300
 #define DIRECTDRAW_VERSION  0x500
@@ -73,7 +74,9 @@ class EMU {
     EMU();
     ~EMU();
 
-    void run(uint64_t cycles);
+    void run();
+    void run_cpu(uint64_t cycles);
+
     void reset();
 
     void open_cart(char *filename);

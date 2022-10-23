@@ -1,6 +1,7 @@
 #include "io.h"
 #include "upd7801.h"
 
+
 void IO::initialize()
 {
     key = emu->key_buffer();
